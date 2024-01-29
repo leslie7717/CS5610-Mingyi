@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ma3 by Mingyi</title>
+    <style>
+      /* My CSS code */
+      .container {
+        display: grid;
+        grid-template-rows: 1fr 4fr 1fr;
+        row-gap: 10px;
+      }
+      .heading {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #c5f6fa;
+      }
+      .heading-primary {
+        font-family: sans-serif;
+        font-size: 42px;
+      }
+      .main-content {
+        display: grid;
+        grid-template-columns: 1fr 4fr 1fr;
+        gap: 10px;
+      }
+      .left {
+        background-color: #99e9f2;
+        padding: 10px;
+      }
+      .middle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #66d9e8;
+      }
+      .square {
+        background-color: #ffa8a8;
+        height: 60px;
+        aspect-ratio: 1/1;
+        cursor: pointer;
+      }
+      .square:hover {
+        background-color: #0b7285;
+        height: 120px;
+        transition: 0.5s;
+      }
+      .right {
+        background-color: #99e9f2;
+      }
+      .footer {
+        background-color: #c5f6fa;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- My page content -->
+    <div class="container">
+      <section class="heading">
+        <h1 class="heading-primary">Mingyi's Website</h1>
+      </section>
+      <section class="main-content">
+        <div class="left">
+          <p>Test</p>
+        </div>
+        <div class="middle">
+          <div class="square"></div>
+        </div>
+        <div class="right"></div>
+      </section>
+      <section class="footer"></section>
+    </div>
+  </body>
+</html>
