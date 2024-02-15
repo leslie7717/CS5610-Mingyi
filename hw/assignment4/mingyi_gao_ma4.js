@@ -23,7 +23,7 @@ function findBiggestNumber(map) {
       }
     }
   }
-  if (res == -Infinity) {
+  if (res === -Infinity) {
     return undefined;
   }
   return res;
@@ -46,9 +46,18 @@ function findBiggestNumber(map) {
 */
 
 function balancedString(str) {
-  /*
-        Insert code here!
-    */
+  const charCounts = new Array(26).fill(0);
+  for (let i = 0; i < str.length; i++) {
+    charCounts[str[i].charCodeAt(0) - "a".charCodeAt(0)]++;
+  }
+  let firstNonZeroCount = charCounts.find((count) => count > 0);
+  if (!firstNonZeroCount) return true;
+  for (let i = 1; i < charCounts.length; i++) {
+    if (charCounts[i] !== 0 && charCounts[i] !== firstNonZeroCount) {
+      return false;
+    }
+  }
+  return true;
 }
 
 // PROBLEM 3 - additivePersistence
@@ -65,9 +74,20 @@ function balancedString(str) {
     an integer as described above
 */
 function additivePersistence(num) {
-  /*
-        Insert code here!
-    */
+  res = 0;
+  while (num > 9) {
+    let new_num = 0;
+    while (num != 0) {
+      let digits = Math.floor(num / 10);
+      remainder = num - digits * 10;
+      new_num += remainder;
+      num -= remainder;
+      num /= 10;
+    }
+    num = new_num;
+    res++;
+  }
+  return res;
 }
 
 // TEST 1 - findBiggestNumber
