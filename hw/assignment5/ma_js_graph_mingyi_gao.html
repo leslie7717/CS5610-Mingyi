@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script>
+      // these data structures are available to all the code inside
+      // of the script tag.  You can store any data that you think
+      // will be helpful here.
+      const arrayDataStructure = [];
+      const objectDataStructure = {};
+
+      // if you pass an HTML element here, it will swap the class to be selected/unselected
+      function handleClick(elmt) {
+        const pos = elmt.getAttribute("data-pos").split("-").map(Number);
+        const row = pos[0];
+        const col = pos[1];
+        const adjacentPositions = [
+          `${row - 1}-${col}`, // up
+          `${row + 1}-${col}`, // down
+          `${row}-${col - 1}`, // left
+          `${row}-${col + 1}`, // right
+        ];
+        toggleElmt(elmt);
+        adjacentPositions.forEach((pos) => {
+          const adjBox = document.querySelector(`.box[data-pos="${pos}"]`);
+          if (adjBox) {
+            toggleElmt(adjBox);
+          }
+        });
+      }
+
+      function toggleElmt(elmt) {
+        if (elmt.className.includes("selected")) {
+          elmt.className = "box";
+        } else {
+          elmt.className = "box selected";
+        }
+      }
+
+      // the window load event means that this logic will only activate once the page
+      // has loaded
+      window.addEventListener("load", () => {
+        // get all of the elements with the classname "box"
+        const boxes = document.getElementsByClassName("box");
+        console.log(boxes);
+        // iterate over them
+        for (let i = 0; i < boxes.length; i++) {
+          // and apply this click event to them
+          // task 1 - add event listener to each box!
+          boxes[i].addEventListener("click", () => {
+            handleClick(boxes[i]);
+          });
+        }
+      });
+    </script>
+
+    <style>
+      .container {
+        display: grid;
+        grid-template-rows: 30% 30% 30%;
+        grid-template-columns: 30% 30% 30%;
+        height: 300px;
+        width: 300px;
+      }
+
+      .box {
+        border: 1px solid purple;
+      }
+
+      .selected {
+        background-color: blueviolet;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="box" data-pos="0-0"></div>
+      <div class="box" data-pos="0-1"></div>
+      <div class="box" data-pos="0-2"></div>
+      <div class="box" data-pos="1-0"></div>
+      <div class="box" data-pos="1-1"></div>
+      <div class="box" data-pos="1-2"></div>
+      <div class="box" data-pos="2-0"></div>
+      <div class="box" data-pos="2-1"></div>
+      <div class="box" data-pos="2-2"></div>
+    </div>
+  </body>
+</html>
