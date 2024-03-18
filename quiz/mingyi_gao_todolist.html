@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To-Do List</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+      }
+      .container {
+        max-width: 400px;
+        margin: auto;
+      }
+      input[type="text"] {
+        width: 70%;
+        padding: 10px;
+        margin-right: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+      button {
+        padding: 10px;
+        border: none;
+        background-color: #007bff;
+        color: white;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      button:hover {
+        background-color: #0056b3;
+      }
+      ul {
+        list-style: none;
+        padding: 0;
+      }
+      ul li {
+        background: #f9f9f9;
+        border: 1px solid #e0e0e0;
+        padding: 10px;
+        margin-top: 5px;
+        border-radius: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <input type="text" id="taskInput" placeholder="Enter a new task" />
+      <button id="addTaskButton">Add Task</button>
+      <ul id="taskList"></ul>
+    </div>
+
+    <script>
+      document
+        .getElementById("addTaskButton")
+        .addEventListener("click", function () {
+          var taskInput = document.getElementById("taskInput");
+          var taskList = document.getElementById("taskList");
+          var task = taskInput.value.trim();
+
+          if (task) {
+            var li = document.createElement("li");
+            li.textContent = task;
+            taskList.appendChild(li);
+            taskInput.value = "";
+          } else {
+            alert("Please enter a task!");
+          }
+        });
+    </script>
+  </body>
+</html>
