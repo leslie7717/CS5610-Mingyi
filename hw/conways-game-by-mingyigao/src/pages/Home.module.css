@@ -16,7 +16,7 @@
 
 .linkButton {
   display: inline-block;
-  background-color: #007bff; /* Bootstrap primary button color */
+  background-color: #007bff;
   color: white;
   padding: 10px 20px;
   border: none;
@@ -28,7 +28,7 @@
 
 .linkButton:hover,
 .linkButton:focus {
-  background-color: #0056b3; /* Darker shade for hover/focus */
+  background-color: #0056b3;
   color: white;
   outline: none;
 }

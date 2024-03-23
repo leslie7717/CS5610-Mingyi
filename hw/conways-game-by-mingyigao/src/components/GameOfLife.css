@@ -1,0 +1,63 @@
+.game-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  font-size: 20px;
+}
+
+.grid-info {
+  margin-bottom: 20px;
+}
+
+.grid-info span {
+  margin-right: 10px;
+}
+
+.grid-info button {
+  margin-right: 10px;
+  padding: 5px 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.grid-info button:hover {
+  background-color: #0056b3;
+}
+
+.grid {
+  display: grid;
+}
+
+.row {
+  display: flex;
+}
+
+.inputs {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.cell {
+  width: 20px;
+  height: 20px;
+  border: 1px solid #ccc;
+}
+
+.cell.alive {
+  background-color: #000;
+}
+
+.cell.dead {
+  background-color: #fff;
+}
+
+.error {
+  color: red;
+}

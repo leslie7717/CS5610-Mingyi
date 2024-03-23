@@ -1,0 +1,21 @@
+.grid {
+  display: grid;
+}
+
+.row {
+  display: flex;
+}
+
+.cell {
+  width: 20px;
+  height: 20px;
+  border: 1px solid #ccc;
+}
+
+.cell.alive {
+  background-color: #000;
+}
+
+.cell.dead {
+  background-color: #fff;
+}
